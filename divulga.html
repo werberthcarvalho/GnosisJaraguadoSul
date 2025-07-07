@@ -5,19 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini-Curso de Autoconhecimento</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Montserrat', Arial, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
             padding: 20px;
         }
         
@@ -26,215 +21,170 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
-            max-width: 1080px; /* Tamanho ideal para Instagram */
+            max-width: 600px; /* Mantendo o tamanho original */
         }
         
         .poster {
             width: 100%;
-            aspect-ratio: 1/1.25; /* Proporção ideal para Instagram */
-            max-width: 1080px;
-            background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Efeito decorativo */
-        .poster::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255,107,107,0.15) 0%, rgba(255,107,107,0) 70%);
-            border-radius: 50%;
-        }
-        
-        .poster::after {
-            content: "";
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(76,175,80,0.1) 0%, rgba(76,175,80,0) 70%);
-            border-radius: 50%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 25px;
         }
         
         h1 {
-            color: #2c3e50;
-            font-size: clamp(24px, 3.5vw, 32px);
-            margin-bottom: 15px;
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
         }
         
         .gratuito {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background-color: #ff6b6b;
             color: white;
             display: inline-block;
-            padding: 8px 25px;
-            border-radius: 30px;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-weight: bold;
-            font-size: clamp(16px, 2vw, 20px);
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            font-size: 18px;
+            margin-bottom: 15px;
         }
         
         .info-line {
-            font-size: clamp(14px, 2vw, 16px);
+            font-size: 16px;
             color: #555;
             margin-bottom: 5px;
             text-align: center;
-            font-weight: 500;
         }
         
         .local {
-            font-weight: 600;
-            margin: 20px 0;
+            font-weight: bold;
+            margin: 15px 0;
             text-align: center;
-            color: #2c3e50;
-            font-size: clamp(14px, 2vw, 16px);
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 10px;
-            border-radius: 8px;
-            display: inline-block;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .themes-container {
-            margin: 30px 0;
-            position: relative;
-            z-index: 1;
+            color: #333;
         }
         
         .theme {
-            margin-bottom: 25px;
-            padding-left: 30px;
+            margin-bottom: 20px;
+            padding-left: 20px;
             position: relative;
         }
         
         .theme::before {
-            content: "▢";
+            content: "□";
             position: absolute;
             left: 0;
-            color: #ff6b6b;
-            font-size: 20px;
-            top: 0;
+            color: #666;
         }
         
         .theme-title {
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: clamp(16px, 2.2vw, 18px);
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
         }
         
         .theme-date {
-            color: #ff6b6b;
-            font-size: clamp(13px, 1.8vw, 14px);
-            margin-bottom: 8px;
-            font-weight: 600;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
         }
         
         .theme-description {
             color: #555;
-            font-size: clamp(14px, 2vw, 15px);
-            line-height: 1.5;
+            font-size: 14px;
+            line-height: 1.4;
         }
         
         .details {
-            margin-top: 30px;
-            position: relative;
-            z-index: 1;
+            margin-top: 25px;
         }
         
         .detail-item {
-            margin-bottom: 10px;
-            padding-left: 30px;
+            margin-bottom: 8px;
+            padding-left: 20px;
             position: relative;
-            font-size: clamp(14px, 2vw, 16px);
-            color: #555;
         }
         
         .detail-item::before {
-            content: "▢";
+            content: "□";
             position: absolute;
             left: 0;
-            color: #4CAF50;
-            font-size: 20px;
-            top: -2px;
+            color: #666;
         }
         
         .vagas {
             text-align: center;
-            font-weight: 800;
+            font-weight: bold;
             color: #ff6b6b;
-            margin-top: 30px;
-            font-size: clamp(18px, 3vw, 22px);
+            margin-top: 20px;
+            font-size: 18px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
         
         .download-btn {
-            background: linear-gradient(45deg, #4CAF50, #66BB6A);
+            background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 12px 25px;
             font-size: 16px;
-            border-radius: 8px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 30px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            transition: background-color 0.3s;
         }
         
         .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+            background-color: #45a049;
         }
-        
-        /* Responsividade melhorada */
-        @media (max-width: 768px) {
+
+        /* Melhorias para responsividade */
+        @media (max-width: 600px) {
             .poster {
-                padding: 30px 20px;
+                padding: 20px;
             }
             
             h1 {
                 font-size: 24px;
             }
             
-            .theme {
-                padding-left: 25px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .poster {
-                padding: 25px 15px;
+            .gratuito {
+                font-size: 16px;
+                padding: 4px 12px;
             }
             
-            .theme::before, .detail-item::before {
-                font-size: 18px;
+            .info-line, .local {
+                font-size: 14px;
+            }
+            
+            .theme-title {
+                font-size: 15px;
+            }
+            
+            .theme-description, .detail-item {
+                font-size: 13px;
+            }
+            
+            .vagas {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 20px;
+            }
+            
+            .poster {
+                padding: 15px;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="poster-container">
@@ -246,21 +196,19 @@
                 <div class="local">Local: CEU MANEQUINHA - Jaraguá do Sul</div>
             </div>
             
-            <div class="themes-container">
-                <div class="theme">
-                    <div class="theme-title">TEMA 1 – 12/07/2025</div>
-                    <div class="theme-description">
-                        Signos: O que eles dizem sobre você<br>
-                        Estudo prático dos signos para compreender melhor sua personalidade e atitudes.
-                    </div>
+            <div class="theme">
+                <div class="theme-title">TEMA 1 – 12/07/2025</div>
+                <div class="theme-description">
+                    Signos: O que eles dizem sobre você<br>
+                    Estudo prático dos signos para compreender melhor sua personalidade e atitudes.
                 </div>
-                
-                <div class="theme">
-                    <div class="theme-title">TEMA 2 – 19/07/2025</div>
-                    <div class="theme-description">
-                        Introdução à Ciência da Meditação<br>
-                        Passo a passo para aprender e praticar uma meditação verdadeira, com base em conhecimentos milenares.
-                    </div>
+            </div>
+            
+            <div class="theme">
+                <div class="theme-title">TEMA 2 – 19/07/2025</div>
+                <div class="theme-description">
+                    Introdução à Ciência da Meditação<br>
+                    Passo a passo para aprender e praticar uma meditação verdadeira, com base em conhecimentos milenares.
                 </div>
             </div>
             
@@ -281,18 +229,10 @@
     <script>
         document.getElementById('downloadBtn').addEventListener('click', function() {
             const poster = document.getElementById('poster');
-            const originalWidth = poster.offsetWidth;
-            const originalHeight = poster.offsetHeight;
             
-            // Aumenta a resolução para a imagem final
-            const scale = 2;
-            
+            // Configurações para melhor qualidade da imagem
             const options = {
-                scale: scale,
-                width: originalWidth,
-                height: originalHeight,
-                windowWidth: originalWidth,
-                windowHeight: originalHeight,
+                scale: 2, // Aumenta a resolução
                 logging: false,
                 useCORS: true,
                 allowTaint: true
@@ -300,8 +240,8 @@
             
             html2canvas(poster, options).then(canvas => {
                 const link = document.createElement('a');
-                link.download = 'mini-curso-autoconhecimento-instagram.png';
-                link.href = canvas.toDataURL('image/png', 1.0);
+                link.download = 'mini-curso-autoconhecimento.png';
+                link.href = canvas.toDataURL('image/png');
                 link.click();
             });
         });
