@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini-Curso de Autoconhecimento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --verde-gnosis: #008ab4;
+      --azul-brasil: #007bff;
+      --amarelo: #fdd835;
+      --vermelho: #e53935;
+      --cinza-leve: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--cinza-leve);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .poster-border {
+      background: conic-gradient(
+        from 180deg,
+        var(--azul-brasil) 0deg 120deg,
+        var(--amarelo) 120deg 240deg,
+        var(--vermelho) 240deg 360deg
+      );
+      padding: 6px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .poster {
+      background-color: rgb(225, 255, 251);
+      border-radius: 14px;
+      padding: 30px 25px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-gnosis {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: var(--verde-gnosis);
+      margin-bottom: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .gratuito {
+      background-color: var(--vermelho);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 50px;
+      display: inline-block;
+      font-weight: 600;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+
+    .info-line,
+    .local {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 5px;
+    }
+
+    .local {
+      font-weight: 600;
+      color: var(--azul-brasil);
+    }
+
+    .theme {
+      background-color: var(--verde-gnosis);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    .theme-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .theme-description {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .details {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .detail-item {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .detail-item::before {
+      content: "▣";
+      position: absolute;
+      left: 0;
+      color: var(--verde-gnosis);
+    }
+
+    .vagas {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 16px;
+      color: var(--vermelho);
+      text-transform: uppercase;
+    }
+
+    .download-btn {
+      margin-top: 25px;
+      background-color: var(--azul-brasil);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #0056c1;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      .theme {
+        padding: 15px;
+      }
+
+      .download-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="poster-border">
+    <div class="poster" id="poster">
+      <!-- 🟡 LOGO GNOSIS -->
+      <img src="img/291035268_2243826845797672_2688217737460808590_n.jpg" alt="Símbolo Gnosis Brasil" class="logo-gnosis" />
+
+      <!-- 🟢 TÍTULO -->
+      <h1>Mini-Curso de Autoconhecimento</h1>
+      <div class="gratuito">Gratuito!</div>
+      <div class="info-line">Três sábados seguidos, sempre às 14 h</div>
+      <div class="local">Local: CEU MANEQUINHA - Jaraguá do Sul</div>
+
+      <!-- 🔷 TEMAS -->
+      <div class="theme">
+        <div class="theme-title">TEMA 1 – 05/07/2025</div>
+        <div class="theme-description">
+          Quem sou eu?<br />
+          Uma introdução prática ao autoconhecimento e à observação de si mesmo.
+        </div>
+      </div>
+
+      <div class="theme">
+        <div class="theme-title">TEMA 2 – 12/07/2025</div>
+        <div class="theme-description">
+          Signos: O que eles dizem sobre você<br />
+          Estudo prático dos signos para compreender melhor sua personalidade e atitudes.
+        </div>
+      </div>
+
+      <div class="theme">
+        <div class="theme-title">TEMA 3 – 19/07/2025</div>
+        <div class="theme-description">
+          Introdução à Ciência da Meditação<br />
+          Passo a passo para aprender e praticar uma meditação verdadeira, com base em conhecimentos milenares.
+        </div>
+      </div>
+
+      <!-- 📌 DETALHES -->
+      <div class="details">
+        <div class="detail-item">Início: 12 de julho (sábado)</div>
+        <div class="detail-item">Horário: 14 h às 16 h</div>
+        <div class="detail-item">Aulas sempre aos sábados</div>
+        <div class="detail-item">Inscreva-se agora</div>
+      </div>
+
+      <div class="vagas">Vagas limitadas!</div>
+    </div>
+  </div>
+
+  <button class="download-btn" id="downloadBtn">📥 Baixar como Imagem</button>
+
+  <!-- 🔽 HTML2CANVAS -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script>
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+      const poster = document.getElementById('poster');
+      html2canvas(poster).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'mini-curso-gnosis.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    });
+  </script>
+</body>
+</html>
