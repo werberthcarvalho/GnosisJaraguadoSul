@@ -298,3 +298,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== EVENT LISTENERS GLOBAIS =====
 document.getElementById('darkModeToggle')?.addEventListener('click', toggleDarkMode);
+
+
+
+
+
+// script.js
+
+// --- Funcionalidade do Carrossel ---
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) { myIndex = 1 }
+    x[myIndex - 1].style.display = "block";
+    setTimeout(carousel, 9000); // Muda a imagem a cada 9 segundos
+}
+
+// --- Funcionalidade de Alternar Modo Escuro ---
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    // Salva a preferência do usuário no localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Verifica a preferência de tema salva ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+});

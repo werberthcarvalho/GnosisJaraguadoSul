@@ -6,9 +6,12 @@
     <title>Gnosis - Conhecimento Interior</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Portal de estudos gnósticos para autoconhecimento e transformação interior">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="stylesheet" href="style.css">
+
     <script defer src="script.js"></script>
 </head>
 
@@ -19,22 +22,22 @@
                 <i class="bi bi-book me-2"></i>
                 <span>Gnosis 1ª Câmara</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html"><i
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><i
                                 class="bi bi-house-door me-1"></i> Início</a></li>
                     <li class="nav-item"><a class="nav-link" href="presenca.html"><i
                                 class="bi bi-check-circle me-1"></i> Presenças</a></li>
                     <li class="nav-item"><a class="nav-link" href="resumos.html"><i class="bi bi-journal-text me-1"></i>
-                            Resumos</a></li>
+                                Resumos</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html"><i
                                 class="bi bi-box-arrow-in-right me-1"></i> Login</a></li>
                     <li class="nav-item">
                         <button class="btn btn-sm btn-outline-light ms-3" onclick="toggleDarkMode()"
-                            id="darkModeToggle">
+                            id="darkModeToggle" aria-label="Alternar Modo Escuro">
                             <i class="bi bi-moon-fill"></i>
                         </button>
                     </li>
@@ -43,19 +46,18 @@
         </div>
     </nav>
 
-    <header class="hero-bg py-5 mb-4">
-        <div class="container text-center text-white">
-            <h1 class="display-4 fw-bold">Autoconhecimento</h1>
-            <p class="lead">Ciência e Cultura do Homem em Busca do Ser</p>
-        </div>
-    </header>
-
+    <div class="w3-content w3-section" style="max-width:500px">
+        <img class="mySlides w3-animate-fading" src="img/meditacao.felicidade.gnosis.brasil.jpg" alt="Meditação para Felicidade e Gnosis" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="img/maxresdefault.jpg" alt="Imagem relacionada a Gnosis" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="img/As-7-Grandes-Regras-de-Paracelso-para-o-Desenvolvimento-Espiritual.meditacao.gnosis.brasil.jpg" alt="Regras de Paracelso para Desenvolvimento Espiritual" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="img/SUPER-HOMEM-GNOSIS-BRASIL.jpg" alt="Super Homem Gnosis Brasil" style="width:100%">
+    </div>
+    
     <main class="container">
-        <!-- Destaque -->
         <section class="row mb-5">
             <div class="col-lg-8 mx-auto">
                 <div class="card shadow-lg">
-                    <img src="img/v915-red-blue_53876-174923.avif" class="card-img-top" alt="Matéria em destaque">
+                    <img src="img/v915-red-blue_53876-174923.avif" class="card-img-top" alt="Matéria em destaque: Os Três Fatores da Revolução da Consciência">
                     <div class="card-body">
                         <div class="d-flex align-items-center mb-3">
                             <span class="badge bg-primary me-2">Novo</span>
@@ -63,13 +65,14 @@
                         </div>
                         <h2 class="card-title">Os Três Fatores da Revolução da Consciência</h2>
                         <p class="card-text">Explorando os três pilares fundamentais para a transformação interior: Morrer, Nascer e Sacrifício pela Humanidade. Um estudo aprofundado sobre como aplicar esses princípios em nossa vida diária para alcançar a verdadeira libertação.</p>
-                        <a href="#" class="btn btn-primary">Ler Matéria Completa</a>
+                        <a href="materia-revolucao-consciencia.html" class="btn btn-primary">Ler Matéria Completa</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Matérias Recentes -->
+        ---
+
         <section class="mb-5">
             <div class="row mb-4">
                 <div class="col-md-8 mx-auto text-center">
@@ -79,10 +82,9 @@
             </div>
 
             <div class="row g-4">
-                <!-- Matéria 1 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="img/shutterstock_374175952.jpg" class="card-img-top" alt="Imagem da matéria">
+                        <img src="img/shutterstock_374175952.jpg" class="card-img-top" alt="A Prática da Meditação Interior">
                         <div class="card-body">
                             <h5 class="card-title">A Prática da Meditação Interior</h5>
                             <p class="card-text">Técnicas e benefícios da meditação como ferramenta para o despertar da consciência e o autoconhecimento.</p>
@@ -92,15 +94,14 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <a href="#" class="btn btn-outline-primary w-100">Ler Matéria</a>
+                            <a href="materia-meditacao.html" class="btn btn-outline-primary w-100">Ler Matéria</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Matéria 2 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="img/shutterstock_644313052.jpg" class="card-img-top" alt="Imagem da matéria">
+                        <img src="img/shutterstock_644313052.jpg" class="card-img-top" alt="Os Sete Corpos do Ser Humano">
                         <div class="card-body">
                             <h5 class="card-title">Os Sete Corpos do Ser Humano</h5>
                             <p class="card-text">Estudo detalhado sobre os corpos físico, astral, mental, causal e os princípios anímicos do ser humano.</p>
@@ -110,15 +111,14 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <a href="#" class="btn btn-outline-primary w-100">Ler Matéria</a>
+                            <a href="materia-sete-corpos.html" class="btn btn-outline-primary w-100">Ler Matéria</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Matéria 3 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="img\shutterstock_193180694.jpg" class="card-img-top" alt="Imagem da matéria">
+                        <img src="img/shutterstock_193180694.jpg" class="card-img-top" alt="A Alquimia e a Transformação Interior">
                         <div class="card-body">
                             <h5 class="card-title">A Alquimia e a Transformação Interior</h5>
                             <p class="card-text">Como os princípios alquímicos podem ser aplicados no trabalho psicológico para transmutar nossas energias internas.</p>
@@ -128,14 +128,15 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent">
-                            <a href="#" class="btn btn-outline-primary w-100">Ler Matéria</a>
+                            <a href="materia-alquimia.html" class="btn btn-outline-primary w-100">Ler Matéria</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Newsletter -->
+        ---
+
         <section class="row mb-5">
             <div class="col-lg-8 mx-auto">
                 <div class="card bg-primary text-white text-center py-4 shadow">
@@ -144,7 +145,7 @@
                         <p class="card-text mb-4">Cadastre-se para receber em seu e-mail nossos conteúdos exclusivos</p>
                         <form class="row g-2 justify-content-center">
                             <div class="col-md-8">
-                                <input type="email" class="form-control" placeholder="Seu melhor e-mail">
+                                <input type="email" class="form-control" placeholder="Seu melhor e-mail" aria-label="Seu melhor e-mail para newsletter">
                             </div>
                             <div class="col-md-4">
                                 <button type="submit" class="btn btn-light w-100">Cadastrar</button>
@@ -155,63 +156,61 @@
             </div>
         </section>
 
-        <!-- Categorias -->
-        <!-- Substitua a seção de Categorias por este código -->
-<section class="mb-5">
-    <div class="row mb-4">
-        <div class="col-md-8 mx-auto text-center">
-            <h2 class="section-title">Explore por Temas</h2>
-            <p class="text-muted">Nossas principais categorias de estudo</p>
-        </div>
-    </div>
+        ---
 
-    <div class="row g-3">
-        <!-- Filosofia - Ar -->
-        <div class="col-6 col-md-3">
-            <a href="#" class="card category-card bg-air text-white text-center py-4 shadow-sm text-decoration-none">
-                <div class="card-body">
-                    <i class="bi bi-cloud-fill mb-2" style="font-size: 2rem;"></i>
-                    <h5 class="card-title mb-0">Filosofia</h5>
-                    <small class="opacity-75">Elemento Ar</small>
+        <section class="mb-5">
+            <div class="row mb-4">
+                <div class="col-md-8 mx-auto text-center">
+                    <h2 class="section-title">Explore por Temas</h2>
+                    <p class="text-muted">Nossas principais categorias de estudo</p>
                 </div>
-            </a>
-        </div>
-        
-        <!-- Arte - Terra -->
-        <div class="col-6 col-md-3">
-            <a href="#" class="card category-card bg-earth text-white text-center py-4 shadow-sm text-decoration-none">
-                <div class="card-body">
-                    <i class="bi bi-globe mb-2" style="font-size: 2rem;"></i>
-                    <h5 class="card-title mb-0">Arte</h5>
-                    <small class="opacity-75">Elemento Terra</small>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-6 col-md-3">
+                    <a href="categoria-filosofia.html" class="card category-card bg-air text-white text-center py-4 shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <i class="bi bi-cloud-fill mb-2" style="font-size: 2rem;"></i>
+                            <h5 class="card-title mb-0">Filosofia</h5>
+                            <small class="opacity-75">Elemento Ar</small>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        
-        <!-- Ciência - Água -->
-        <div class="col-6 col-md-3">
-            <a href="#" class="card category-card bg-water text-white text-center py-4 shadow-sm text-decoration-none">
-                <div class="card-body">
-                    <i class="bi bi-droplet-fill mb-2" style="font-size: 2rem;"></i>
-                    <h5 class="card-title mb-0">Ciência</h5>
-                    <small class="opacity-75">Elemento Água</small>
+                
+                <div class="col-6 col-md-3">
+                    <a href="categoria-arte.html" class="card category-card bg-earth text-white text-center py-4 shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <i class="bi bi-globe mb-2" style="font-size: 2rem;"></i>
+                            <h5 class="card-title mb-0">Arte</h5>
+                            <small class="opacity-75">Elemento Terra</small>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        
-        <!-- Mística - Fogo -->
-        <div class="col-6 col-md-3">
-            <a href="#" class="card category-card bg-fire text-white text-center py-4 shadow-sm text-decoration-none">
-                <div class="card-body">
-                    <i class="bi bi-fire mb-2" style="font-size: 2rem;"></i>
-                    <h5 class="card-title mb-0">Mística</h5>
-                    <small class="opacity-75">Elemento Fogo</small>
+                
+                <div class="col-6 col-md-3">
+                    <a href="categoria-ciencia.html" class="card category-card bg-water text-white text-center py-4 shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <i class="bi bi-droplet-fill mb-2" style="font-size: 2rem;"></i>
+                            <h5 class="card-title mb-0">Ciência</h5>
+                            <small class="opacity-75">Elemento Água</small>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
-    </div>
-</section>
+                
+                <div class="col-6 col-md-3">
+                    <a href="categoria-mistica.html" class="card category-card bg-fire text-white text-center py-4 shadow-sm text-decoration-none">
+                        <div class="card-body">
+                            <i class="bi bi-fire mb-2" style="font-size: 2rem;"></i>
+                            <h5 class="card-title mb-0">Mística</h5>
+                            <small class="opacity-75">Elemento Fogo</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
+
+    ---
 
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
@@ -232,21 +231,21 @@
                 <div class="col-md-4">
                     <h5>Redes Sociais</h5>
                     <div class="social-links">
-                        <a href="#" class="text-decoration-none text-muted me-2"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-decoration-none text-muted me-2"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-decoration-none text-muted me-2"><i class="bi bi-youtube"></i></a>
-                        <a href="#" class="text-decoration-none text-muted"><i class="bi bi-telegram"></i></a>
+                        <a href="https://www.facebook.com/seuperfil" target="_blank" aria-label="Facebook" class="text-decoration-none text-muted me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/seuperfil" target="_blank" aria-label="Instagram" class="text-decoration-none text-muted me-2"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com/seucanal" target="_blank" aria-label="YouTube" class="text-decoration-none text-muted me-2"><i class="bi bi-youtube"></i></a>
+                        <a href="https://t.me/seucanal" target="_blank" aria-label="Telegram" class="text-decoration-none text-muted"><i class="bi bi-telegram"></i></a>
                     </div>
                 </div>
             </div>
             <hr class="my-4">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0 text-muted">&copy; 2023 Gnosis 1ª Câmara. Todos os direitos reservados.</p>
+                    <p class="mb-0 text-muted">© 2023 Gnosis 1ª Câmara. Todos os direitos reservados.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-decoration-none text-muted me-3">Termos de Uso</a>
-                    <a href="#" class="text-decoration-none text-muted">Política de Privacidade</a>
+                    <a href="termos-de-uso.html" class="text-decoration-none text-muted me-3">Termos de Uso</a>
+                    <a href="politica-de-privacidade.html" class="text-decoration-none text-muted">Política de Privacidade</a>
                 </div>
             </div>
         </div>

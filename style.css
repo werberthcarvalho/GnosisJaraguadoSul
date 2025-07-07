@@ -1,23 +1,75 @@
+/* ==================================== */
+/* VARIÁVEIS DE TEMA           */
+/* ==================================== */
 :root {
-  --primary-color: #0381b3;
-  --secondary-color: #858796;
-  --dark-color: #2c3e50;
-  --light-color: #f8f9fc;
-  --success-color: #1cc88a;
-  --info-color: #36b9cc;
-  --warning-color: #f6c23e;
-  --danger-color: #e74a3b;
+  --primary-color: #0381b3; /* Azul mais escuro, para navbar e destaque */
+  --secondary-color: #858796; /* Cinza suave para texto secundário */
+  --dark-color: #2c3e50; /* Cor escura para elementos gerais */
+  --light-color: #f8f9fc; /* Cor clara para o fundo padrão */
+  --success-color: #1cc88a; /* Verde sucesso */
+  --info-color: #36b9cc; /* Ciano/Azul claro para info */
+  --warning-color: #f6c23e; /* Amarelo alerta */
+  --danger-color: #e74a3b; /* Vermelho perigo */
+
+  /* Variáveis para gradientes de categoria - base Bootstrap */
+  --category-air-start: #0dcaf0;
+  --category-air-end: #4db8ff;
+  --category-earth-start: #20c997;
+  --category-earth-end: #3bb78f;
+  --category-water-start: #0d6efd;
+  --category-water-end: #3b8bff;
+  --category-fire-start: #fd7e14;
+  --category-fire-end: #ff9f43;
+
+  /* Variáveis para o Modo Escuro */
+  --dark-mode-bg: #1a1a2e; /* Fundo principal no modo escuro */
+  --dark-mode-card-bg: #16213e; /* Fundo dos cards no modo escuro */
+  --dark-mode-border: #0f3460; /* Borda dos cards no modo escuro */
+  --dark-mode-text: #e6e6e6; /* Cor do texto no modo escuro */
+  --dark-mode-muted-text: #b8b8b8; /* Texto suave no modo escuro */
+
+  /* Gradientes para Modo Escuro */
+  --dark-mode-navbar-start: #2187af;
+  --dark-mode-navbar-end: #1a878f;
+  --dark-mode-air-start: #0a8ea8;
+  --dark-mode-air-end: #2d92d8;
+  --dark-mode-earth-start: #1a9e7a;
+  --dark-mode-earth-end: #2a8c6e;
+  --dark-mode-water-start: #0a58ca;
+  --dark-mode-water-end: #2a75d8;
+  --dark-mode-fire-start: #d96a0e;
+  --dark-mode-fire-end: #e88a35;
+  --dark-mode-psyche-start: #5d39a8;
+  --dark-mode-psyche-end: #7a52c9;
+  --dark-mode-philosophy-start: #1a9e7a; /* Reutilizando earth dark */
+  --dark-mode-philosophy-end: #2a8c6e; /* Reutilizando earth dark */
+  --dark-mode-mysticism-start: #d96a0e; /* Reutilizando fire dark */
+  --dark-mode-mysticism-end: #e88a35; /* Reutilizando fire dark */
+  --dark-mode-art-start: #b52a6d;
+  --dark-mode-art-end: #d44f92;
 }
 
+/* ==================================== */
+/* ESTILOS GERAIS          */
+/* ==================================== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--light-color);
-  color: #333;
+  color: #333; /* Cor de texto padrão */
   line-height: 1.6;
   padding-top: 60px; /* Espaço para o navbar fixo */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para o modo escuro */
 }
 
-/* ========== NAVBAR FIXO ========== */
+a:focus,
+button:focus {
+  outline: 2px dashed var(--info-color);
+  outline-offset: 2px;
+}
+
+/* ==================================== */
+/* NAVBAR FIXO              */
+/* ==================================== */
 .navbar {
   background: linear-gradient(135deg, var(--primary-color) 0%, #224abe 100%) !important;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -26,6 +78,7 @@ body {
   width: 100%;
   z-index: 1030;
   padding: 0.5rem 1rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Transição para modo escuro */
 }
 
 .navbar-brand {
@@ -33,12 +86,13 @@ body {
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+  white-space: nowrap; /* Evita quebra de linha em telas pequenas */
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.9) !important; /* Mantido !important para garantir sobrescrita do Bootstrap */
   padding: 0.5rem 1rem;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -51,61 +105,88 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* ========== DARK MODE ========== */
+/* ==================================== */
+/* MODO ESCURO             */
+/* ==================================== */
 body.dark-mode {
-  background-color: #1a1a2e;
-  color: #e6e6e6;
+  background-color: var(--dark-mode-bg);
+  color: var(--dark-mode-text);
 }
 
 body.dark-mode .navbar {
-  background: linear-gradient(135deg, #2187af 0%, #1a878f 100%) !important;
+  background: linear-gradient(135deg, var(--dark-mode-navbar-start) 0%, var(--dark-mode-navbar-end) 100%) !important;
 }
 
 body.dark-mode .card {
-  background-color: #16213e;
-  border-color: #0f3460;
-  color: #e6e6e6;
+  background-color: var(--dark-mode-card-bg);
+  border-color: var(--dark-mode-border);
+  color: var(--dark-mode-text);
 }
 
 body.dark-mode .card-header {
-  background-color: #0f3460 !important;
+  background-color: var(--dark-mode-border) !important; /* Ajustado para consistência com border */
 }
 
 body.dark-mode .list-group-item {
-  background-color: #16213e;
-  border-color: #0f3460;
-  color: #e6e6e6;
+  background-color: var(--dark-mode-card-bg);
+  border-color: var(--dark-mode-border);
+  color: var(--dark-mode-text);
 }
 
 body.dark-mode .text-muted {
-  color: #b8b8b8 !important;
+  color: var(--dark-mode-muted-text) !important;
+}
+
+/* Modo escuro para cores de categoria */
+body.dark-mode .category-card {
+  opacity: 0.95; /* Leve opacidade para um look mais suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .bg-air {
+  background: linear-gradient(135deg, var(--dark-mode-air-start) 0%, var(--dark-mode-air-end) 100%);
+}
+
+body.dark-mode .bg-earth {
+  background: linear-gradient(135deg, var(--dark-mode-earth-start) 0%, var(--dark-mode-earth-end) 100%);
+}
+
+body.dark-mode .bg-water {
+  background: linear-gradient(135deg, var(--dark-mode-water-start) 0%, var(--dark-mode-water-end) 100%);
+}
+
+body.dark-mode .bg-fire {
+  background: linear-gradient(135deg, var(--dark-mode-fire-start) 0%, var(--dark-mode-fire-end) 100%);
+}
+
+body.dark-mode .bg-psyche {
+  background: linear-gradient(135deg, var(--dark-mode-psyche-start) 0%, var(--dark-mode-psyche-end) 100%);
+}
+
+body.dark-mode .bg-philosophy {
+  background: linear-gradient(135deg, var(--dark-mode-philosophy-start) 0%, var(--dark-mode-philosophy-end) 100%);
+}
+
+body.dark-mode .bg-mysticism {
+  background: linear-gradient(135deg, var(--dark-mode-mysticism-start) 0%, var(--dark-mode-mysticism-end) 100%);
+}
+
+body.dark-mode .bg-art {
+  background: linear-gradient(135deg, var(--dark-mode-art-start) 0%, var(--dark-mode-art-end) 100%);
+}
+
+body.dark-mode .card-footer {
+  background-color: var(--dark-mode-border); /* Consistente com a borda */
+  border-top: 1px solid #1a4b8c; /* Cor da borda pode ser uma variável também */
 }
 
 
-
-/* ========== ELEMENTOS COMUNS ========== */
-.hero-bg {
-  background: linear-gradient(rgba(0, 96, 109, 0.479), rgba(248, 235, 55, 0.7)), 
-              url('img/v915-red-blue_53876-174923.avif');
-  background-size: cover;
-  background-position: center;
-  border-radius: 0;
-  margin-top: -1rem; /* Compensa o navbar fixo */
-  padding: 6rem 0;
-
-}
+/* ==================================== */
+/* ELEMENTOS COMUNS            */
+/* ==================================== */
 .hero-bg {
   background-repeat: no-repeat;
-}
-
-.navbar-brand {
-  font-size: 1rem;
-  white-space: nowrap;
-}
-a:focus,
-button:focus {
-  outline: 2px dashed var(--info-color);
-  outline-offset: 2px;
+  /* Adicione mais estilos aqui se for uma imagem de fundo */
 }
 
 .card {
@@ -137,184 +218,115 @@ button:focus {
   background: var(--primary-color);
 }
 
-/* ========== RESPONSIVIDADE ========== */
-@media (max-width: 768px) {
-  body {
-    padding-top: 56px; /* Ajuste para mobile */
-  }
-  
-  .navbar {
-    padding: 0.5rem;
-  }
-  
-  .hero-bg {
-    padding: 4rem 0;
-  }
-  
-  .hero-bg h1 {
-    font-size: 2.2rem;
-  }
-}
-
-
+/* ==================================== */
+/* FONTES PERSONALIZADAS       */
+/* ==================================== */
 @font-face {
   font-family: 'Amontillados';
   src: url('fonts/Amontillados.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
- 
 }
 
 /* Aplicar a nova fonte somente ao título principal */
 .display-4 {
   font-family: 'Amontillados', serif;
   font-weight: normal !important;
-  font-size: 10.5rem;
-   
+  font-size: 10.5rem; /* Ajuste se necessário para o layout */
 }
+
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
   color: var(--secondary-color);
 }
 
-
-
-/* Adicionar ao style.css */
-
-/* Estilos para a página inicial */
-/* ESTILOS PARA CATEGORIAS - VERSÃO COMPLETA */
+/* ==================================== */
+/* ESTILOS PARA CATEGORIAS        */
+/* ==================================== */
 .category-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  /* Ajuste para que os gradientes sejam mais vibrantes por padrão */
+  color: white !important; /* Garante que o texto seja branco sobre os gradientes coloridos */
+  text-decoration: none; /* Remove sublinhado padrão de links */
 }
 
 .category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Cores das categorias originais */
-.bg-psyche {
-    background-color: #6f42c1;
-    background: linear-gradient(135deg, #6f42c1 0%, #8a63d2 100%);
-}
-
-.bg-philosophy {
-    background-color: #20c997;
-    background: linear-gradient(135deg, #20c997 0%, #3bb78f 100%);
-}
-
-.bg-mysticism {
-    background-color: #fd7e14;
-    background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
-}
-
-.bg-art {
-    background-color: #d63384;
-    background: linear-gradient(135deg, #d63384 0%, #e45fa6 100%);
-}
-
-/* Novas cores dos elementos */
+/* Cores das categorias baseadas nos elementos */
 .bg-air {
-    background-color: #0dcaf0;
-    background: linear-gradient(135deg, #0dcaf0 0%, #4db8ff 100%);
+  background: linear-gradient(135deg, var(--category-air-start) 0%, var(--category-air-end) 100%);
 }
 
 .bg-earth {
-    background-color: #20c997;
-    background: linear-gradient(135deg, #20c997 0%, #3bb78f 100%);
+  background: linear-gradient(135deg, var(--category-earth-start) 0%, var(--category-earth-end) 100%);
 }
 
 .bg-water {
-    background-color: #0d6efd;
-    background: linear-gradient(135deg, #0d6efd 0%, #3b8bff 100%);
+  background: linear-gradient(135deg, var(--category-water-start) 0%, var(--category-water-end) 100%);
 }
 
 .bg-fire {
-    background-color: #fd7e14;
-    background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
+  background: linear-gradient(135deg, var(--category-fire-start) 0%, var(--category-fire-end) 100%);
 }
 
 /* Ícones das categorias */
 .category-card i {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .category-card:hover i {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Melhorias para cards de matérias */
 .card-img-top {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    height: 200px;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 200px; /* Altura fixa para consistência */
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
+  transition: opacity 0.3s ease;
 }
 
 .card:hover .card-img-top {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
 /* Espaçamentos e margens */
 .mb-section {
-    margin-bottom: 5rem;
+  margin-bottom: 5rem;
 }
 
-/* Estilos para dark mode */
-body.dark-mode .category-card {
-    opacity: 0.95;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
 
-body.dark-mode .bg-air {
-    background: linear-gradient(135deg, #0a8ea8 0%, #2d92d8 100%);
-}
+/* ==================================== */
+/* RESPONSIVIDADE             */
+/* ==================================== */
+@media (max-width: 768px) {
+  body {
+      padding-top: 56px; /* Ajuste para mobile, altura padrão do navbar Bootstrap */
+  }
+  
+  .navbar {
+      padding: 0.5rem;
+  }
+  
+  /* Se você tiver um hero section com esta classe */
+  .hero-bg {
+      padding: 4rem 0;
+  }
+  
+  .hero-bg h1 {
+      font-size: 2.2rem;
+  }
 
-body.dark-mode .bg-earth {
-    background: linear-gradient(135deg, #1a9e7a 0%, #2a8c6e 100%);
-}
-
-body.dark-mode .bg-water {
-    background: linear-gradient(135deg, #0a58ca 0%, #2a75d8 100%);
-}
-
-body.dark-mode .bg-fire {
-    background: linear-gradient(135deg, #d96a0e 0%, #e88a35 100%);
-}
-
-body.dark-mode .bg-psyche {
-    background: linear-gradient(135deg, #5d39a8 0%, #7a52c9 100%);
-}
-
-body.dark-mode .bg-philosophy {
-    background: linear-gradient(135deg, #1a9e7a 0%, #2a8c6e 100%);
-}
-
-body.dark-mode .bg-mysticism {
-    background: linear-gradient(135deg, #d96a0e 0%, #e88a35 100%);
-}
-
-body.dark-mode .bg-art {
-    background: linear-gradient(135deg, #b52a6d 0%, #d44f92 100%);
-}
-
-body.dark-mode .card {
-    background-color: #16213e;
-    color: #e6e6e6;
-    border-color: #0f3460;
-}
-
-body.dark-mode .card-footer {
-    background-color: #0f3460;
-    border-top: 1px solid #1a4b8c;
-}
-
-body.dark-mode .text-muted {
-    color: #b8b8b8 !important;
+  .display-4 {
+      font-size: 5rem; /* Ajuste para que a fonte 'Amontillados' não seja muito grande em mobile */
+  }
 }
