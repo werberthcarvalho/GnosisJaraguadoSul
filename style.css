@@ -85,8 +85,8 @@ body.dark-mode .text-muted {
 
 /* ========== ELEMENTOS COMUNS ========== */
 .hero-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('img/iStock-953909568.jpg');
+  background: linear-gradient(rgba(0, 96, 109, 0.842), rgba(2, 75, 88, 0.7)), 
+              url('img/v915-red-blue_53876-174923.avif');
   background-size: cover;
   background-position: center;
   border-radius: 0;
