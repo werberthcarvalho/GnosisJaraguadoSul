@@ -1,0 +1,69 @@
+/* ESTILOS PARA PÁGINA DE REGISTRO ADMIN */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar-xs {
+  width: 24px;
+  height: 24px;
+}
+
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.table th {
+  white-space: nowrap;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Dark mode para tabelas */
+body.dark-mode .table {
+  color: #e6e6e6;
+}
+
+body.dark-mode .table th {
+  background-color: #0f3460;
+  border-color: #1a4b8c;
+}
+
+body.dark-mode .table td {
+  border-color: #1a4b8c;
+}
+
+body.dark-mode .table-hover tbody tr:hover {
+  background-color: rgba(15, 52, 96, 0.5);
+  color: #ffffff;
+}
+
+/* Modal no dark mode */
+body.dark-mode .modal-content {
+  background-color: #16213e;
+  border-color: #0f3460;
+}
+
+body.dark-mode .modal-header {
+  border-bottom-color: #0f3460;
+}
+
+body.dark-mode .modal-footer {
+  border-top-color: #0f3460;
+}

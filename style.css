@@ -1,0 +1,320 @@
+:root {
+  --primary-color: #0381b3;
+  --secondary-color: #858796;
+  --dark-color: #2c3e50;
+  --light-color: #f8f9fc;
+  --success-color: #1cc88a;
+  --info-color: #36b9cc;
+  --warning-color: #f6c23e;
+  --danger-color: #e74a3b;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-color);
+  color: #333;
+  line-height: 1.6;
+  padding-top: 60px; /* Espaço para o navbar fixo */
+}
+
+/* ========== NAVBAR FIXO ========== */
+.navbar {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #224abe 100%) !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========== DARK MODE ========== */
+body.dark-mode {
+  background-color: #1a1a2e;
+  color: #e6e6e6;
+}
+
+body.dark-mode .navbar {
+  background: linear-gradient(135deg, #2187af 0%, #1a878f 100%) !important;
+}
+
+body.dark-mode .card {
+  background-color: #16213e;
+  border-color: #0f3460;
+  color: #e6e6e6;
+}
+
+body.dark-mode .card-header {
+  background-color: #0f3460 !important;
+}
+
+body.dark-mode .list-group-item {
+  background-color: #16213e;
+  border-color: #0f3460;
+  color: #e6e6e6;
+}
+
+body.dark-mode .text-muted {
+  color: #b8b8b8 !important;
+}
+
+
+
+/* ========== ELEMENTOS COMUNS ========== */
+.hero-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('img/iStock-953909568.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 0;
+  margin-top: -1rem; /* Compensa o navbar fixo */
+  padding: 6rem 0;
+
+}
+.hero-bg {
+  background-repeat: no-repeat;
+}
+
+.navbar-brand {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+a:focus,
+button:focus {
+  outline: 2px dashed var(--info-color);
+  outline-offset: 2px;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+  body {
+    padding-top: 56px; /* Ajuste para mobile */
+  }
+  
+  .navbar {
+    padding: 0.5rem;
+  }
+  
+  .hero-bg {
+    padding: 4rem 0;
+  }
+  
+  .hero-bg h1 {
+    font-size: 2.2rem;
+  }
+}
+
+
+@font-face {
+  font-family: 'Amontillados';
+  src: url('fonts/Amontillados.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+ 
+}
+
+/* Aplicar a nova fonte somente ao título principal */
+.display-4 {
+  font-family: 'Amontillados', serif;
+  font-weight: normal !important;
+  font-size: 10.5rem;
+   
+}
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--secondary-color);
+}
+
+
+
+/* Adicionar ao style.css */
+
+/* Estilos para a página inicial */
+/* ESTILOS PARA CATEGORIAS - VERSÃO COMPLETA */
+.category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Cores das categorias originais */
+.bg-psyche {
+    background-color: #6f42c1;
+    background: linear-gradient(135deg, #6f42c1 0%, #8a63d2 100%);
+}
+
+.bg-philosophy {
+    background-color: #20c997;
+    background: linear-gradient(135deg, #20c997 0%, #3bb78f 100%);
+}
+
+.bg-mysticism {
+    background-color: #fd7e14;
+    background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
+}
+
+.bg-art {
+    background-color: #d63384;
+    background: linear-gradient(135deg, #d63384 0%, #e45fa6 100%);
+}
+
+/* Novas cores dos elementos */
+.bg-air {
+    background-color: #0dcaf0;
+    background: linear-gradient(135deg, #0dcaf0 0%, #4db8ff 100%);
+}
+
+.bg-earth {
+    background-color: #20c997;
+    background: linear-gradient(135deg, #20c997 0%, #3bb78f 100%);
+}
+
+.bg-water {
+    background-color: #0d6efd;
+    background: linear-gradient(135deg, #0d6efd 0%, #3b8bff 100%);
+}
+
+.bg-fire {
+    background-color: #fd7e14;
+    background: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
+}
+
+/* Ícones das categorias */
+.category-card i {
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover i {
+    transform: scale(1.1);
+}
+
+/* Melhorias para cards de matérias */
+.card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    opacity: 0.9;
+}
+
+/* Espaçamentos e margens */
+.mb-section {
+    margin-bottom: 5rem;
+}
+
+/* Estilos para dark mode */
+body.dark-mode .category-card {
+    opacity: 0.95;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .bg-air {
+    background: linear-gradient(135deg, #0a8ea8 0%, #2d92d8 100%);
+}
+
+body.dark-mode .bg-earth {
+    background: linear-gradient(135deg, #1a9e7a 0%, #2a8c6e 100%);
+}
+
+body.dark-mode .bg-water {
+    background: linear-gradient(135deg, #0a58ca 0%, #2a75d8 100%);
+}
+
+body.dark-mode .bg-fire {
+    background: linear-gradient(135deg, #d96a0e 0%, #e88a35 100%);
+}
+
+body.dark-mode .bg-psyche {
+    background: linear-gradient(135deg, #5d39a8 0%, #7a52c9 100%);
+}
+
+body.dark-mode .bg-philosophy {
+    background: linear-gradient(135deg, #1a9e7a 0%, #2a8c6e 100%);
+}
+
+body.dark-mode .bg-mysticism {
+    background: linear-gradient(135deg, #d96a0e 0%, #e88a35 100%);
+}
+
+body.dark-mode .bg-art {
+    background: linear-gradient(135deg, #b52a6d 0%, #d44f92 100%);
+}
+
+body.dark-mode .card {
+    background-color: #16213e;
+    color: #e6e6e6;
+    border-color: #0f3460;
+}
+
+body.dark-mode .card-footer {
+    background-color: #0f3460;
+    border-top: 1px solid #1a4b8c;
+}
+
+body.dark-mode .text-muted {
+    color: #b8b8b8 !important;
+}
