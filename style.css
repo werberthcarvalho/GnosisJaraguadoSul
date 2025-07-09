@@ -330,3 +330,52 @@ body.dark-mode .card-footer {
       font-size: 5rem; /* Ajuste para que a fonte 'Amontillados' não seja muito grande em mobile */
   }
 }
+
+
+
+
+
+
+/* Container do slideshow */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Estilo dos slides */
+.mySlides {
+  display: none;
+  width: 100%;
+  animation: fade 1.5s ease-in-out; /* Efeito de fade */
+}
+
+/* Animação de transição */
+@keyframes fade {
+  from {opacity: 0.4} 
+  to {opacity: 1}
+}
+
+/* Controles de navegação */
+.w3-left, .w3-right, .w3-badge {
+  cursor: pointer;
+}
+
+.w3-badge {
+  height: 13px;
+  width: 13px;
+  padding: 0;
+  margin: 0 2px;
+}
+
+/* Efeitos hover nos controles */
+.w3-left:hover, .w3-right:hover {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 50%;
+}
+
+/* Indicador ativo */
+.w3-white {
+  background-color: white !important;
+}

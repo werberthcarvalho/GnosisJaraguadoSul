@@ -228,113 +228,48 @@ function login() {
   alert(`Bem-vindo, ${usuario}! Login simulado com sucesso.`);
 }
 
-// ===== SISTEMA DE PRESENÇAS DO ALUNO =====
-function marcarPresenca(aula) {
-  let presencas = JSON.parse(localStorage.getItem('presencas') || '[]');
-  if (!presencas.includes(aula)) {
-    presencas.push(aula);
-    localStorage.setItem('presencas', JSON.stringify(presencas));
-    alert(`Presença na ${aula.replace('aula', 'Aula ')} registrada com sucesso!`);
-  } else {
-    alert(`Você já registrou presença na ${aula.replace('aula', 'Aula ')}`);
-  }
+
+
+
+
+
+var slideIndex = 1;
+var slideInterval = setInterval(plusDivsAuto, 5000); // 5 segundos
+
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(plusDivsAuto, 5000);
+  showDivs(slideIndex += n);
 }
 
-function carregarPresencas() {
-  if (document.getElementById('lista-presenca')) {
-    const presencas = JSON.parse(localStorage.getItem('presencas') || '[]');
-    const lista = document.getElementById('lista-presenca');
-    const total = document.getElementById('total-presencas');
-    
-    lista.innerHTML = '';
-    
-    if (presencas.length === 0) {
-      lista.innerHTML = '<li class="list-group-item text-muted">Nenhuma presença registrada ainda</li>';
-    } else {
-      presencas.forEach(aula => {
-        const li = document.createElement('li');
-        li.className = 'list-group-item d-flex justify-content-between align-items-center';
-        li.innerHTML = `
-          <span>Aula ${aula.replace('aula', '')}</span>
-          <span class="badge bg-success rounded-pill">Presente</span>
-        `;
-        lista.appendChild(li);
-      });
-    }
-    
-    total.textContent = presencas.length;
-  }
+function plusDivsAuto() {
+  showDivs(slideIndex += 1);
 }
 
-// ===== INICIALIZAÇÃO =====
-document.addEventListener('DOMContentLoaded', () => {
-  // Dark Mode
-  if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
-  }
-
-  // Página de Presenças Admin
-  if (document.getElementById('tabelaRegistros')) {
-    renderizarTabelaPresencas();
-    document.getElementById('filtroForm')?.addEventListener('submit', filtrarRegistros);
-    document.getElementById('formNovaAula')?.addEventListener('submit', adicionarRegistro);
-  }
-
-  // Página de Presenças do Aluno
-  carregarPresencas();
-
-  // Página de Cadastro
-  document.getElementById('formCadastro')?.addEventListener('submit', validarCadastro);
-  document.getElementById('togglePassword')?.addEventListener('click', toggleSenha);
-
-  // Página de Login
-  if (document.getElementById('loginForm')) {
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      login();
-    });
-  }
-});
-
-// ===== EVENT LISTENERS GLOBAIS =====
-document.getElementById('darkModeToggle')?.addEventListener('click', toggleDarkMode);
-
-
-
-
-
-// script.js
-
-// --- Funcionalidade do Carrossel ---
-var myIndex = 0;
-carousel();
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    myIndex++;
-    if (myIndex > x.length) { myIndex = 1 }
-    x[myIndex - 1].style.display = "block";
-    setTimeout(carousel, 9000); // Muda a imagem a cada 9 segundos
+function currentDiv(n) {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(plusDivsAuto, 5000);
+  showDivs(slideIndex = n);
 }
 
-// --- Funcionalidade de Alternar Modo Escuro ---
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    // Salva a preferência do usuário no localStorage
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
+function showDivs(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-white";
 }
-
-// Verifica a preferência de tema salva ao carregar a página
-document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-    }
-});
