@@ -43,33 +43,23 @@
             border-radius: 5px;
         }
 
-        .hero-section {
-            background: url('img/iStock-504487910.jpg') no-repeat center center;
-            background-size: cover;
+        /* Carousel Styles */
+        .carousel-item {
             height: 60vh;
             min-height: 400px;
-            position: relative;
-            display: flex;
-            align-items: center;
         }
-
-        .hero-overlay {
+        
+        .carousel-caption {
             background-color: rgba(0, 0, 0, 0.6);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            color: white;
             padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+            border-radius: 10px;
+            bottom: initial;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .carousel-control-prev, .carousel-control-next {
+            width: 5%;
         }
 
         .card {
@@ -219,16 +209,16 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            .hero-section {
+            .carousel-item {
                 height: 50vh;
                 min-height: 300px;
             }
             
-            .hero-content h1 {
+            .carousel-caption h1 {
                 font-size: 2rem;
             }
             
-            .hero-content p {
+            .carousel-caption p {
                 font-size: 1rem;
             }
         }
@@ -304,17 +294,59 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="display-4 fw-bold mb-4">Conhecimento Interior</h1>
-            <p class="lead mb-4">Descubra os ensinamentos gnósticos para o despertar da consciência</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#courses" class="btn btn-gnosis btn-lg">Conheça nossos cursos</a>
-                <a href="#events" class="btn btn-outline-light btn-lg">Próximos eventos</a>
+    <!-- Carousel Section -->
+    <div id="gnosisCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#gnosisCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#gnosisCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#gnosisCarousel" data-bs-slide-to="2"></button>
+        </div>
+        
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/iStock-953909568.jpg" alt="Conhecimento Interior" class="d-block w-100" style="object-fit: cover;">
+                <div class="carousel-caption">
+                    <h1 class="display-4 fw-bold mb-4">Conhecimento Interior</h1>
+                    <p class="lead mb-4">Descubra os ensinamentos gnósticos para o despertar da consciência</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#courses" class="btn btn-gnosis btn-lg">Conheça nossos cursos</a>
+                        <a href="#events" class="btn btn-outline-light btn-lg">Próximos eventos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cursos Gratuitos" class="d-block w-100" style="object-fit: cover;">
+                <div class="carousel-caption">
+                    <h1 class="display-4 fw-bold mb-4">Cursos Gratuitos</h1>
+                    <p class="lead mb-4">Aprenda técnicas de autoconhecimento e desenvolvimento espiritual</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#courses" class="btn btn-gnosis btn-lg">Ver cursos disponíveis</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">Inscreva-se</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Meditação" class="d-block w-100" style="object-fit: cover;">
+                <div class="carousel-caption">
+                    <h1 class="display-4 fw-bold mb-4">Meditação e Autoconhecimento</h1>
+                    <p class="lead mb-4">Técnicas avançadas para o desenvolvimento da consciência</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#courses" class="btn btn-gnosis btn-lg">Saiba mais</a>
+                        <a href="#locations" class="btn btn-outline-light btn-lg">Visite-nos</a>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#gnosisCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#gnosisCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
 
     <!-- About Section -->

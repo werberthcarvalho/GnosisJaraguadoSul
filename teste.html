@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Gnosis Brasil - Jaraguá do Sul</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Site oficial do Instituto Gnosis Brasil em Jaraguá do Sul. Cursos gratuitos sobre autoconhecimento, espiritualidade e meditação.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Para ícone .icone da página -->
+<link rel="icon" href="img/cropped-logo-sol-7.webp" type="image/jpeg">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        :root {
+            --gnosis-purple: #006c9e;
+            --gnosis-gold: #f5b041;
+            --gnosis-dark: #1a1a2e;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .gnosis-bg {
+            background: linear-gradient(135deg, var(--gnosis-purple), #4a148c);
+        }
+
+        .offcanvas {
+            background: linear-gradient(to bottom, var(--gnosis-dark), #16213e);
+        }
+
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+
+        .hero-section {
+            background: url('img/iStock-504487910.jpg') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+            min-height: 400px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-gnosis {
+            background-color: var(--gnosis-purple);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gnosis:hover {
+            background-color: #5a1b82;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-gnosis {
+            border: 2px solid var(--gnosis-purple);
+            color: var(--gnosis-purple);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-gnosis:hover {
+            background-color: var(--gnosis-purple);
+            color: #fff;
+        }
+
+        .footer {
+            background: linear-gradient(to right, #005555, #16213e);
+            color: white;
+        }
+
+        .logo-letter {
+            font-family: 'Amontillados', serif;
+            font-weight: normal !important;
+            font-size: clamp(2rem, 8vw, 10rem);
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .w3-left, .w3-right, .w3-badge {
+            cursor: pointer;
+        }
+
+        .w3-badge {
+            height: 13px;
+            width: 13px;
+            padding: 0;
+        }
+
+        img[loading="lazy"] {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .palestra {
+            background-color: var(--gnosis-purple);
+            text-align: center;
+            padding: 2%;
+            color: white;
+        }
+
+        .bg-gnosis {
+            background-color: #006c9e;
+            color: white;
+        }
+
+        .event-banner {
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .jaragua {
+            font-family: 'Amontillados', serif;
+            font-weight: normal !important;
+            font-size: 3.5rem;
+        }
+
+        /* Gallery styles */
+        .gallery-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            width: 200px;
+            margin-right: 15px;
+            vertical-align: top;
+            white-space: normal;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-item p {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Loading animation */
+        .loading-spinner {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            vertical-align: text-bottom;
+            border: 0.25em solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: spinner-border .75s linear infinite;
+        }
+
+        @keyframes spinner-border {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 50vh;
+                min-height: 300px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Accessibility improvements */
+        a:focus, button:focus {
+            outline: 2px solid var(--gnosis-gold);
+            outline-offset: 2px;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--gnosis-purple);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--gnosis-gold);
+            color: var(--gnosis-dark);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg gnosis-bg sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#">
+                <i class="bi bi-stars me-2"></i>Gnosis Brasil Jaraguá do Sul SC
+            </a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebar" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#about">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#courses">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#books">Livros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#locations">Sedes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold mb-4">Conhecimento Interior</h1>
+            <p class="lead mb-4">Descubra os ensinamentos gnósticos para o despertar da consciência</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#courses" class="btn btn-gnosis btn-lg">Conheça nossos cursos</a>
+                <a href="#events" class="btn btn-outline-light btn-lg">Próximos eventos</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Sobre a Gnosis em Jaraguá do Sul</h2>
+                    <p class="lead">A Gnosis é uma sabedoria milenar que busca o autoconhecimento e o desenvolvimento da consciência.</p>
+                    <p>Em Jaraguá do Sul, oferecemos cursos gratuitos, palestras e atividades que ajudam no crescimento pessoal e espiritual, baseados nos ensinamentos de Samael Aun Weor.</p>
+                    <p>Nossa missão é difundir esses conhecimentos de forma clara e prática, adaptados à vida moderna.</p>
+                    <a href="#courses" class="btn btn-gnosis mt-3">Conheça nossos cursos</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Vídeo sobre a Gnosis" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Inscreva-se em nossos Cursos Gratuitos!</h2>
+                <p class="lead">Nossos cursos de autoconhecimento oferecem a oportunidade perfeita para compreender suas emoções, valores e propósito de vida.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+                            class="card-img-top" alt="Curso Básico" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Curso Básico de Gnosis</h5>
+                            <p class="card-text">Introdução aos princípios gnósticos, meditação, auto-observação e os três fatores de revolução da consciência.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-clock me-2"></i>Duração: 3 meses</li>
+                                <li><i class="bi bi-calendar me-2"></i>Início: Todo mês</li>
+                                <li><i class="bi bi-people me-2"></i>Vagas limitadas</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-gnosis w-100" data-bs-toggle="modal" data-bs-target="#cursoBasicoModal">Mais informações</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            class="card-img-top" alt="Esoterismo" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Esoterismo Prático</h5>
+                            <p class="card-text">Estudo dos símbolos sagrados, tarô, astrologia, alquimia e cabala aplicados ao desenvolvimento interior.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-clock me-2"></i>Duração: 6 meses</li>
+                                <li><i class="bi bi-calendar me-2"></i>Início: Março e Setembro</li>
+                                <li><i class="bi bi-people me-2"></i>Pré-requisito: Curso Básico</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-gnosis w-100" data-bs-toggle="modal" data-bs-target="#esoterismoModal">Mais informações</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            class="card-img-top" alt="Meditação" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Meditação e Autoconhecimento</h5>
+                            <p class="card-text">Técnicas avançadas de meditação, concentração e introspecção para o despertar da consciência.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-clock me-2"></i>Duração: 4 meses</li>
+                                <li><i class="bi bi-calendar me-2"></i>Início: Todo bimestre</li>
+                                <li><i class="bi bi-people me-2"></i>Vagas limitadas</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-gnosis w-100" data-bs-toggle="modal" data-bs-target="#meditacaoModal">Mais informações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+<section id="books" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Livros Gnósticos</h2>
+            <p class="lead">Conheça nossa biblioteca | Livros em Português | Ebooks Gratuítos</p>
+        </div>
+        
+        <!-- Books Gallery -->
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="img/revoluçao-dialetica.jpg" alt="Revolução da Dialética" loading="lazy">
+                <p class="fw-bold">Revolução da Dialética</p>
+                <button class="btn btn-sm btn-outline-gnosis w-100" data-bs-toggle="modal" data-bs-target="#livro1Modal">Detalhes</button>
+            </div>
+            <div class="gallery-item">
+                <img src="img/download.jpg" alt="Psicologia Revolucionária" loading="lazy">
+                <p class="fw-bold">Psicologia Revolucionária</p>
+                <button class="btn btn-sm btn-outline-gnosis w-100" data-bs-toggle="modal" data-bs-target="#livro2Modal">Detalhes</button>
+            </div>
+            <div class="gallery-item">
+                <img src="img/img-20161016-wa0039.jpg" alt="Matrimônio Perfeito" loading="lazy">
+                <p class="fw-bold">Matrimônio Perfeito</p>
+                <button class="btn btn-sm btn-outline-gnosis w-100" data-bs-toggle="modal" data-bs-target="#livro3Modal">Detalhes</button>
+            </div>
+            <div class="gallery-item">
+                <img src="img/CatedrasGnosticasCat.jpg" alt="Catedras Gnósticas" loading="lazy">
+                <p class="fw-bold">Catedras Gnósticas</p>
+                <button class="btn btn-sm btn-outline-gnosis w-100" data-bs-toggle="modal" data-bs-target="#livro4Modal">Detalhes</button>
+            </div>
+            <div class="gallery-item">
+                <img src="img/Curso-Esotérico-de-Cabala-Capa-Textura1-721x1024.jpg.webp" alt="Mensagem de Aquário" loading="lazy">
+                <p class="fw-bold">Curso Esotérico de Cabala</p>
+                <button class="btn btn-sm btn-outline-gnosis w-100" data-bs-toggle="modal" data-bs-target="#livro5Modal">Detalhes</button>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-gnosis">Ver Todos os Livros</a>
+        </div>
+    </div>
+</section>
+
+<!-- Modals -->
+<!-- Modal Livro 1 -->
+<div class="modal fade" id="livro1Modal" tabindex="-1" aria-labelledby="livro1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="livro1ModalLabel">Revolução da Dialética</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="img/revoluçao-dialetica.jpg" class="img-fluid" alt="Revolução da Dialética">
+                    </div>
+                    <div class="col-md-8">
+                        <h5>Autor: Samael Aun Weor</h5>
+                        <p>Descrição: Este livro aborda a transformação radical da mente através da dialética superior, ensinando como transcender a lógica convencional para alcançar um entendimento mais profundo da realidade.</p>
+                        <p>Páginas: 200</p>
+                        <p>Ano de publicação: 1974</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <a href="#" class="btn btn-gnosis">Baixar Ebook</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Livro 2 -->
+<div class="modal fade" id="livro2Modal" tabindex="-1" aria-labelledby="livro2ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="livro2ModalLabel">Psicologia Revolucionária</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="img/download.jpg" class="img-fluid" alt="Psicologia Revolucionária">
+                    </div>
+                    <div class="col-md-8">
+                        <h5>Autor: Samael Aun Weor</h5>
+                        <p>Descrição: Uma obra que explora os fundamentos da psicologia gnóstica, oferecendo ferramentas para o autoconhecimento e a transformação interior.</p>
+                        <p>Páginas: 180</p>
+                        <p>Ano de publicação: 1960</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <a href="#" class="btn btn-gnosis">Baixar Ebook</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Livro 3 -->
+<div class="modal fade" id="livro3Modal" tabindex="-1" aria-labelledby="livro3ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="livro3ModalLabel">Matrimônio Perfeito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="img/img-20161016-wa0039.jpg" class="img-fluid" alt="Matrimônio Perfeito">
+                    </div>
+                    <div class="col-md-8">
+                        <h5>Autor: Samael Aun Weor</h5>
+                        <p>Descrição: O livro trata sobre a alquimia sexual e o caminho para alcançar a união perfeita entre homem e mulher, tanto no plano físico quanto espiritual.</p>
+                        <p>Páginas: 300</p>
+                        <p>Ano de publicação: 1950</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <a href="#" class="btn btn-gnosis">Baixar Ebook</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Livro 4 -->
+<div class="modal fade" id="livro4Modal" tabindex="-1" aria-labelledby="livro4ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="livro4ModalLabel">Catedras Gnósticas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="img/CatedrasGnosticasCat.jpg" class="img-fluid" alt="Catedras Gnósticas">
+                    </div>
+                    <div class="col-md-8">
+                        <h5>Autor: Samael Aun Weor</h5>
+                        <p>Descrição: Compilação de conferências e ensinamentos sobre os princípios gnósticos, abordando temas como cosmologia, antropologia e teurgia.</p>
+                        <p>Páginas: 250</p>
+                        <p>Ano de publicação: 1978</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <a href="#" class="btn btn-gnosis">Baixar Ebook</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Livro 5 -->
+<div class="modal fade" id="livro5Modal" tabindex="-1" aria-labelledby="livro5ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="livro5ModalLabel">Curso Esotérico de Cabala</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="img/Curso-Esotérico-de-Cabala-Capa-Textura1-721x1024.jpg.webp" class="img-fluid" alt="Curso Esotérico de Cabala">
+                    </div>
+                    <div class="col-md-8">
+                        <h5>Autor: Samael Aun Weor</h5>
+                        <p>Descrição: Um estudo profundo sobre a Cabala e sua aplicação prática no caminho espiritual, revelando os mistérios da Árvore da Vida.</p>
+                        <p>Páginas: 320</p>
+                        <p>Ano de publicação: 1976</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <a href="#" class="btn btn-gnosis">Baixar Ebook</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Nossa Sede em Jaraguá do Sul</h2>
+                <p class="lead">Venha nos visitar e conhecer nosso trabalho</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="card h-100 border-0">
+                        <div class="card-body">
+                            <h4 class="card-title fw-bold mb-4">
+                                <i class="bi bi-geo-alt-fill text-danger me-2"></i>Endereço
+                            </h4>
+                            <p class="card-text">Rua dos Gnósticos, 123 - Centro</p>
+                            <p class="card-text">Jaraguá do Sul - SC</p>
+                            <p class="card-text">CEP: 89200-000</p>
+
+                            <h4 class="card-title fw-bold mt-4 mb-4">
+                                <i class="bi bi-clock-fill text-primary me-2"></i>Horário de Funcionamento
+                            </h4>
+                            <p class="card-text">Segunda a Sexta: 18h às 22h</p>
+                            <p class="card-text">Sábados: 9h às 12h</p>
+                            <p class="card-text">Domingos: Fechado</p>
+
+                            <h4 class="card-title fw-bold mt-4 mb-4">
+                                <i class="bi bi-telephone-fill text-success me-2"></i>Contato
+                            </h4>
+                            <p class="card-text"><a href="tel:+554712345678" class="text-decoration-none">(47) 1234-5678</a></p>
+                            <p class="card-text"><a href="mailto:contato@gnosisjaragua.org.br" class="text-decoration-none">contato@gnosisjaragua.org.br</a></p>
+                            
+                            <div class="mt-4">
+                                <a href="#" class="btn btn-gnosis me-2">
+                                    <i class="bi bi-whatsapp"></i> WhatsApp
+                                </a>
+                                <a href="#" class="btn btn-outline-gnosis">
+                                    <i class="bi bi-calendar-plus"></i> Agendar Visita
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9 h-100">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.123456789012!2d-49.12345678901234!3d-26.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzI2LjQiUyA0OcKwMDcnMzYuNiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+                            style="border:0;" allowfullscreen="" loading="lazy" class="rounded shadow"
+                            title="Localização da Gnosis em Jaraguá do Sul"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Próximos Eventos</h2>
+                <p class="lead">Participe de nossas atividades e palestras</p>
+            </div>
+            
+            <div id="event-banner" class="event-banner bg-gnosis text-white mb-4 rounded">
+                <!-- Banner content will be filled by JavaScript -->
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-gnosis text-white">
+                            <h5 class="card-title mb-0">Palestra: Os Quatro Caminhos</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="bi bi-calendar-date me-2"></i>15 de Outubro, 2023</p>
+                            <p><i class="bi bi-clock me-2"></i>19:30 - 21:30</p>
+                            <p><i class="bi bi-geo-alt me-2"></i>Sede Gnosis Jaraguá</p>
+                            <p class="card-text">Explorando os quatro caminhos do autoconhecimento segundo a tradição gnóstica.</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-gnosis w-100" data-bs-toggle="modal" data-bs-target="#evento1Modal">Mais Informações</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-gnosis text-white">
+                            <h5 class="card-title mb-0">Workshop de Meditação</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="bi bi-calendar-date me-2"></i>22 de Outubro, 2023</p>
+                            <p><i class="bi bi-clock me-2"></i>9:00 - 12:00</p>
+                            <p><i class="bi bi-geo-alt me-2"></i>Parque Municipal</p>
+                            <p class="card-text">Técnicas práticas de meditação para iniciantes e praticantes avançados.</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-gnosis w-100" data-bs-toggle="modal" data-bs-target="#evento2Modal">Mais Informações</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-gnosis text-white">
+                            <h5 class="card-title mb-0">Retiro Espiritual</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><i class="bi bi-calendar-date me-2"></i>10-12 de Novembro, 2023</p>
+                            <p><i class="bi bi-clock me-2"></i>Todo o dia</p>
+                            <p><i class="bi bi-geo-alt me-2"></i>Serra do Rio do Rastro</p>
+                            <p class="card-text">Retiro de fim de semana com práticas de autoconhecimento em contato com a natureza.</p>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <button class="btn btn-gnosis w-100" data-bs-toggle="modal" data-bs-target="#evento3Modal">Mais Informações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-gnosis">Calendário Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Depoimentos</h2>
+                <p class="lead">O que dizem sobre nossos cursos e atividades</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle mb-3" width="100" alt="Depoimento 1">
+                            <h5 class="card-title">Mariana S.</h5>
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text">"O curso básico mudou minha vida. Aprendi técnicas de meditação que me ajudam no dia a dia e uma nova forma de me relacionar com o mundo."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle mb-3" width="100" alt="Depoimento 2">
+                            <h5 class="card-title">Carlos R.</h5>
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <p class="card-text">"O workshop de meditação foi transformador. Os instrutores são muito experientes e o ambiente é acolhedor. Recomendo a todos!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle mb-3" width="100" alt="Depoimento 3">
+                            <h5 class="card-title">Ana L.</h5>
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text">"Participar do retiro espiritual foi uma das melhores decisões que tomei. Conheci pessoas incríveis e aprendi muito sobre mim mesma."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow">
+                        <div class="card-body p-5">
+                            <h2 class="fw-bold text-center mb-4">Entre em Contato</h2>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Telefone</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Assunto</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="" selected disabled>Selecione um assunto</option>
+                                        <option value="Cursos">Cursos</option>
+                                        <option value="Livros">Livros</option>
+                                        <option value="Eventos">Eventos</option>
+                                        <option value="Dúvidas">Dúvidas</option>
+                                        <option value="Outros">Outros</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Mensagem</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-gnosis btn-lg px-4">
+                                        <span id="submitText">Enviar Mensagem</span>
+                                        <span id="submitSpinner" class="loading-spinner d-none"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold mb-4">Assine nossa Newsletter</h2>
+                    <p class="lead mb-4">Receba informações sobre nossos cursos, eventos e novidades diretamente no seu email.</p>
+                    <form class="row g-3 justify-content-center">
+                        <div class="col-md-8">
+                            <input type="email" class="form-control form-control-lg" placeholder="Seu melhor email" required>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-gnosis btn-lg w-100">Assinar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">
+                        <i class="bi bi-stars me-2"></i>Gnosis Brasil
+                    </h5>
+                    <p>Ciência e cultura do Homem em busca do Ser</p>
+                    <p>Sede Jaraguá do Sul - Santa Catarina</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-white me-3" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-white me-3" aria-label="YouTube"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="#" class="text-white" aria-label="WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Início</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">Sobre</a></li>
+                        <li class="mb-2"><a href="#courses" class="text-white text-decoration-none">Cursos</a></li>
+                        <li class="mb-2"><a href="#books" class="text-white text-decoration-none">Livros</a></li>
+                        <li class="mb-2"><a href="#events" class="text-white text-decoration-none">Eventos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+                    <h5 class="fw-bold mb-4">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Rua dos Gnósticos, 123</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i><a href="tel:+554712345678" class="text-white text-decoration-none">(47) 1234-5678</a></li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i><a href="mailto:contato@gnosisjaragua.org.br" class="text-white text-decoration-none">contato@gnosisjaragua.org.br</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Horário de Atendimento</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Segunda a Sexta: 18h-22h</li>
+                        <li class="mb-2">Sábados: 9h-12h</li>
+                        <li>Domingos: Fechado</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">© 2023 Gnosis Brasil - Jaraguá do Sul. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">Desenvolvido com <i class="bi bi-heart-fill text-danger"></i> pela comunidade gnóstica</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Modals -->
+    <!-- Course Modals -->
+    <div class="modal fade" id="cursoBasicoModal" tabindex="-1" aria-labelledby="cursoBasicoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-gnosis text-white">
+                    <h5 class="modal-title" id="cursoBasicoModalLabel">Curso Básico de Gnosis</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" class="img-fluid rounded mb-3" alt="Curso Básico">
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold">Descrição</h5>
+                            <p>O Curso Básico de Gnosis é a porta de entrada para o conhecimento gnóstico. Nele você aprenderá os fundamentos da doutrina, técnicas de meditação, auto-observação e os três fatores de revolução da consciência.</p>
+                            
+                            <h5 class="fw-bold mt-4">Detalhes</h5>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="bi bi-clock me-2"></i>Duração: 3 meses</li>
+                                <li class="list-group-item"><i class="bi bi-calendar me-2"></i>Início: Todo mês</li>
+                                <li class="list-group-item"><i class="bi bi-people me-2"></i>Vagas limitadas</li>
+                                <li class="list-group-item"><i class="bi bi-cash-coin me-2"></i>Gratuito</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5 class="fw-bold">Conteúdo Programático</h5>
+                        <ul>
+                            <li>Introdução à Gnosis</li>
+                            <li>Técnicas de Meditação</li>
+                            <li>Auto-observação Psicológica</li>
+                            <li>Os Três Fatores</li>
+                            <li>Os Sete Corpos</li>
+                            <li>Ego e Essência</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <a href="#contact" class="btn btn-gnosis" data-bs-dismiss="modal">Inscreva-se</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Similar modals for other courses, books and events would go here -->
+    <!-- I've included just one as an example -->
+
+    <!-- Scripts -->
+    <script>
+        // Event banner logic
+        const banner = document.getElementById('event-banner');
+        const hoje = new Date();
+        
+        // Sample event date (July 16, 2025)
+        const eventoData = new Date(2025, 6, 20);
+        
+        // Calculate days difference
+        const diffTime = eventoData - hoje;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+        if (diffDays === 0) {
+            banner.innerHTML = "📣 Hoje é dia da nossa Conferência Pública! Te esperamos às 14h no CEU Manequinha!";
+            banner.classList.remove("bg-secondary", "bg-warning");
+            banner.classList.add("bg-success");
+        } else if (diffDays > 0) {
+            banner.innerHTML = `🔔 Não perca nossa Conferência Pública! Faltam apenas ${diffDays} dias! (16/07/2025)`;
+            banner.classList.remove("bg-secondary", "bg-success");
+            banner.classList.add("bg-warning");
+        } else {
+            banner.innerHTML = "✅ Evento encerrado. Agradecemos sua presença! Em breve novas atividades.";
+            banner.classList.remove("bg-warning", "bg-success");
+            banner.classList.add("bg-secondary");
+        }
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        const submitText = document.getElementById('submitText');
+        const submitSpinner = document.getElementById('submitSpinner');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show loading state
+            submitText.textContent = "Enviando...";
+            submitSpinner.classList.remove('d-none');
+            
+            // Simulate form submission
+            setTimeout(() => {
+                submitText.textContent = "Mensagem Enviada!";
+                submitSpinner.classList.add('d-none');
+                
+                // Reset form
+                setTimeout(() => {
+                    contactForm.reset();
+                    submitText.textContent = "Enviar Mensagem";
+                }, 2000);
+            }, 1500);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
